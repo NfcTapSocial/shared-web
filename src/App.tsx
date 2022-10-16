@@ -27,9 +27,10 @@ function ContactItem(props: {
       return `https://www.instagram.com/${value.replace(/@/, '')}`
     }
     if (type === 'mail') {
-      return `mailto://${value}`
+      return `mailto:${value}`
     }
-    return value
+    if (type === 'phone')
+      return `tel:${value}`
   }
 
 
@@ -83,7 +84,7 @@ const contacts: Contact[] = [
     label: "Phone",
     type: 'phone',
     icon: <IconPhone/>,
-    value: "+1617-251-4933"
+    value: "+16172514933"
   },
 ]
 
